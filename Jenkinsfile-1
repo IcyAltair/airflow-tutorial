@@ -6,7 +6,7 @@ pipeline {
 	stages {
 		stage('Tooling versions') {
 			steps {
-				sh '''
+				bat '''
 					docker --version
 					docker-compose version
 				'''
