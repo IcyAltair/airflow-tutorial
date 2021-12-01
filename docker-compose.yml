@@ -1,5 +1,7 @@
 version: '3.4'
 
+x-aws-vpc: "vpc-02482dcbd7a3d370f"
+
 x-airflow-config: &airflow-config
   AIRFLOW__CORE__DAGS_FOLDER: /dags
   AIRFLOW__CORE__DAGBAG_IMPORT_TIMEOUT: 60
