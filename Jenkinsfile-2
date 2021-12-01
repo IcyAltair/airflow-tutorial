@@ -1,0 +1,18 @@
+pipeline {
+	agent { label "Windows" }
+	options {
+		buildDiscarder(logRotator(numToKeepStr: '5'))
+	}
+	stages {
+		stage('Tooling versions') {
+			steps {
+				bat '''
+					docker --version
+					docker-compose version
+                    docker-compose -f docker-compose.yml -f docker-compose.db.yml up --scale worker=3
+
+				'''
+			}
+		}
+	}
+}
